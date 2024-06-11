@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./stylesheet.css" />
+        <script defer src="./script.js"></script>
+        <title>pettiquette</title>
+        <style>
+            @font-face {
+                font-family: "PartialSansKR-Regular";
+                src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/PartialSansKR-Regular.woff2") format("woff2");
+                font-weight: normal;
+                font-style: normal;
+            }
+            @font-face {
+                font-family: "Cafe24Meongi-B-v1.0";
+                src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2405-3@1.1/Cafe24Meongi-B-v1.0.woff2") format("woff2");
+                font-weight: normal;
+                font-style: normal;
+            }
+            body {
+                font-family: "Cafe24Meongi-B-v1.0";
+            }
+            @media (min-width: 800px) {
+                header {
+                    padding-top: 10px;
+                    padding-bottom: 60px;
+                }
+                .pettiquette {
+                    font-size: 50px;
+                    text-align: center;
+                    color: rgb(48, 48, 48);
+                    /* font-weight: 100; */
+                }
+                .main_image {
+                    position: relative;
+                    overflow: hidden;
+                }
+                img {
+                    width: 100%;
+                    height: auto;
+                    transition: opacity 1s ease-in-out, filter 0.5s ease-in-out;
+                }
+                video {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    opacity: 0;
+                    transition: opacity 1s ease-in-out, filter 0.5s ease-in-out;
+                    object-fit: cover;
+                    pointer-events: none;
+                }
+                .main_image:hover img {
+                    opacity: 0.5;
+                }
+                .main_image:hover video {
+                    opacity: 1;
+                }
+                .dog_feed {
+                    padding-top: 15vh;
+                    padding-left: 20vw;
+                    padding-right: 20vw;
+                    /* width: 80vw; */
+                    height: 85vh;
+                    /* background-image: linear-gradient(to top, blanchedalmond 30%, white); */
+                }
+
+                .dog_feed_guidetext {
+                    font-size: 50px;
+                    color: rgb(37, 37, 37);
+                }
+                /* .dog_feed_img_container {
+                    padding-top: 15vh;
+                    display: flex;
+                    position: relative;
+                    justify-content: space-between;
+                } */
+
+                .feed_img {
+                    /* background-color: rgb(255, 235, 238); */
+                    margin: 50px;
+                    border-radius: 30%;
+                    border: 10px solid white;
+                    outline: 10px solid rgb(31, 31, 31);
+                    width: 500px;
+                    height: 500px;
+                }
+                .feed_img_text {
+                    font-size: 30px;
+                    text-align: center;
+                }
+
+                .slider {
+                    position: relative;
+                    overflow: hidden;
+                    width: 600px;
+                    height: 700px;
+                }
+                .slide {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    /* background-size: cover;
+                    background-position: center; */
+
+                    animation: slider 15s infinite linear;
+                }
+
+                .slide:nth-child(1) {
+                    background-image: url(img1.jpg);
+                    animation-delay: 0;
+                }
+                .slide:nth-child(2) {
+                    background-image: url(img2.jpg);
+                    animation-delay: -5s;
+                }
+                .slide:nth-child(3) {
+                    background-image: url(img3.jpg);
+                    animation-delay: -10s;
+                }
+
+                @keyframes slider {
+                    0% {
+                        transform: translateX(0);
+                    }
+
+                    26% {
+                        transform: translateX(0);
+                    }
+                    33% {
+                        transform: translateX(-100%);
+                        animation-timing-function: step-end;
+                    }
+                    93% {
+                        transform: translateX(100%);
+                    }
+
+                    100% {
+                        transform: translateX(0);
+                    }
+                }
+            }
+            /*
+            @media (max-width: 799px) {
+                header {
+                    padding-bottom: 15px;
+                    border-bottom: 1px solid rgb(212, 212, 212);
+                }
+                .pettiquette {
+                    font-size: 65px;
+                    text-align: center;
+                    color: rgb(48, 48, 48);
+                }
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+            */
+        </style>
+    </head>
+    <body>
+        <header class="header">
+            <div class="pettiquette">pettiquette</div>
+        </header>
+        <main>
+            <div class="main_image">
+                <img src="./image/구슬_사이즈.jpg" alt="강아지사진" />
+                <video src="./image/구슬동영상2편집.mp4" muted></video>
+            </div>
+            <div class="dog_feed">
+                <div class="dog_feed_guidetext">Feed</div>
+                <!-- 
+                <div class="dog_feed_img_container">
+                    <a href="google.com"
+                        ><div class="feed_old dog_feed_img"><img src="./image/사료_나이.png" alt="나이별 사료" /></div
+                    ></a>
+                    <a href="google.com"
+                        ><div class="feed_level dog_feed_img"><img src="./image/사료_등급.png" alt="등급별 사료" /></div
+                    ></a>
+                    <a href="google.com"
+                        ><div class="feed_other dog_feed_img"><img src="./image/사료_기타.png" alt="기타 고려사항" /></div
+                    ></a>
+                </div> -->
+
+                <div class="slider">
+                    <div class="slide">
+                        <a href="#"> <img class="feed_img" src="./image/사료_나이.png" alt="나이별 사료" /></a>
+                        <div class="feed_img_text">old</div>
+                    </div>
+                    <div class="slide">
+                        <a href="#"> <img class="feed_img" src="./image/사료_등급.png" alt="등급별 사료" /></a>
+                        <div class="feed_img_text">level</div>
+                    </div>
+                    <div class="slide">
+                        <a href="#"> <img class="feed_img" src="./image/사료_기타.png" alt="기타 고려사항" /></a>
+                        <div class="feed_img_text">others</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>
+a
